@@ -11,10 +11,10 @@
 6. [AWS Set up](#6-aws-set-up)  
    1. [Sign up the account](#61-sign-up-the-account)  
    2. [Connect the AWS CLI](#62-connect-the-aws-cli)
-
-[](#)
-[](#)
-[](#)
+7. [AWS S3 (Raw File Bucket)](#7-aws-s3-raw-file-bucket)
+8. [AWS Glue](#8-aws-glue)
+9. [AWS Athena](#9-aws-athena)
+10. [AWS Lambda](#10-aws-lambda)
 
 ## 1. Description of the Problem:
 Today, analysts use historical data from platforms like YouTube to build predictive models for better user engagement and smarter decision-making. But these models face challenges due to the changing nature of online video consumption, which can be influenced by trends, world events, and audience preferences.
@@ -130,7 +130,7 @@ This tools can help to read the schema and create the catalog, which eventually 
 
 5. So in this case, we will use AWS lamda to clean and store in the bucket.
 
- ## 10. AWS Lamda:
+ ## 10. AWS Lambda:
  1. Firstly, create the function and give AmazonFullAccess
  2. Open the AWS Lamda and put the python file (which will help us to clean the data)
  3. Click configuration and click the environment variable set several variable that same on our python file
