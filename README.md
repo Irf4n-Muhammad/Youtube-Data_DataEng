@@ -38,7 +38,6 @@ In this project, we gonna leverage some AWS services:
  - AWS S3
  - AWS IAM
  - AWS Glue
- - AWS Catalog
  - AWS lambda
  - AWS athena
  - AWS Redshift
@@ -108,7 +107,44 @@ This tools will provide the bucket which will be used to store our file
 Along the process we will back to create the new bucket, so keep in mind to always specify the name of your bucket.
 For example (your main bucket name)-(your specific task using this bucket)
 
-## 8. 
+3. Download the data from the data source. In case from kaggle, then create the new directory and copy API Command from kaggle and paste that in git bash.
+4. Zip the zip file
+5. Send the folder into S3 Bucket using git bash
+
+## 8. AWS Glue:
+This tools can help to read the schema and create the catalog, which eventually can be created a table and we can use the AWS Athena afterwards.
+1. Create the crawler glue
+2. Then we create the role for the crawler (specify glue name in your glue role)
+3. Set the role:
+   - AmazonFullAccess
+   - AWSGlueServiceRole
+4.Create the new database for AWS Glue
+5. Open the table and we would find some information about json (column name, etc)
+6. Click action and click the view data
+7. And it will open AWS Athena
+
+## 9. AWS Athena:
+1. Click setting and manage
+2. Create the new bucket, in particular for AWS Athena
+3. Try to run, we will find there is error
+4. The issue is the json file has unreaded json format. So we have to edit this to be fitted with the AWS or in other words, we clean the data from semi structured data to structured data.
+   
+<img width="500" alt="image" src="https://github.com/Irf4n-Muhammad/Youtube-Data_DataEng/assets/121205860/61eb2e6e-acc3-4f6e-9510-e6a39d1bbd25">
+
+5. So in this case, we will use AWS lamda to clean and store in the bucket.
+
+ ## 10. AWS Lamda:
+ 1. Firstly, create the function and give AmazonFullAccess
+ 2. Open the AWS Lamda and put the python file (which will help us to clean the data)
+ 3. Click configuration and click the environment variable set several variable that same on our python file
+ 4. Try to setting the run and choose S3 put. Then input yoru bucket and the link of one of your file
+ 5. If there is an error, then scroll down and you'll find 'add layer'. Choose DataWrangler or SDKPandas and choose the latest version
+ 6. If there is an error about timeout, then click the configuration and then click the general button (on the top) and set the timeout to be maybe 3 minutes (You can adjust it as like as you want)
+ 7. Try to run it again and it should work (make sure your connection is good)
+
+    
+    
+
 
 
 
