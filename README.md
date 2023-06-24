@@ -1,5 +1,14 @@
 # Data Engineering Project / Youtube Data Analysis
 
+## List of Contents:
+[1. Description of the Problem](#1-description-of-the-problem)
+
+[2. Objective](#2-objective)
+[](#)
+[](#)
+[](#)
+[](#)
+
 ## 1. Description of the Problem:
 Today, analysts use historical data from platforms like YouTube to build predictive models for better user engagement and smarter decision-making. But these models face challenges due to the changing nature of online video consumption, which can be influenced by trends, world events, and audience preferences.
 
@@ -15,41 +24,73 @@ These datasets can also optimize content recommendations and planning, and guide
 A typical YouTube dataset, available as .csv files or via APIs, includes various engagement metrics but has limitations. It captures historical trends but may not predict sudden changes or account for local contexts. Therefore, it's essential to consider these limitations when using this data. Moreover, we must handle this data responsibly, ensuring user anonymity and data privacy. This project aims to analyze YouTube data using AWS and visualize the results, helping uncover patterns and insights into user behavior and content performance on YouTube.
 
 ## 3. Technologies:
+In this project, we gonna leverage some AWS services:
 
-The choosen technologies is variative and depends on the case and condition. There are some option for certain case and in this case, I am using this option since it's the easiest.
-
-- Dockerfile
-- Docker Compose
-- VM GCP
-- Airflow / Prefect
-- GCS (Google Cloud Storage)
-- Bigquery
-- DBT cloud / Spark
-  DBT is best for this case for several reason:
-  1. The file's size is small (2 GB)
-  2. DBT provide the docuementation
-- Google Data Studio
+ - AWS S3
+ - AWS IAM
+ - AWS Glue
+ - AWS Catalog
+ - AWS lambda
+ - AWS athena
+ - AWS Redshift
 
 ## 4. Data Architecture:
-<img width="700" alt="image" src="https://github.com/Irf4n-Muhammad/Data-Engineering-Project_COVID19-Dataset/assets/121205860/17f49dd3-604f-496e-9ea6-63ea6004deac">
-
+<img src="https://github.com/Irf4n-Muhammad/Youtube-Data_DataEng/assets/121205860/a08ba9c3-f337-4147-b995-24544332a5b5" width="700" height="400">
 
 
 ## 5. Data Description:
 
-The datasets that we'll be using for this analysis are comprehensive and varied, offering different granularities of data. These are as follows:
+### CSV Files:
 
-- full_grouped.csv: This dataset provides daily updates on the number of COVID-19 cases. The unique aspect of this data file is that it goes beyond the country level, incorporating the number of cases at the county, state, and province level. This comprehensive breakdown allows us to analyze not only the overall impact on a given country but also how the virus is affecting specific regions within those countries.
+These files contain historical video data from YouTube for different countries. They include video IDs, viewing durations, user interests, popular content, and more. The data helps understand viewer behavior and video performance trends in respective regions.
 
-- covid_19_clean_complete.csv: Like the previous dataset, this also provides day-to-day updates on the number of COVID-19 cases per country. However, unlike full_grouped.csv, it does not offer data at the county, state, or province level. This dataset can be used for a broad overview of the impact on each country as a whole.
+- CAvideos.csv: Data for Canada
+- DEvideos.csv: Data for Germany
+- FRvideos.csv: Data for France
+- GBvideos.csv: Data for the United Kingdom
+- INvideos.csv: Data for India
+- JPvideos.csv: Data for Japan
+- KRvideos.csv: Data for South Korea
+- MXvideos.csv: Data for Mexico
+- RUvideos.csv: Data for Russia
+- USvideos.csv: Data for the United States
 
-- country_wise_latest.csv: This dataset offers the most recent snapshot of the number of COVID-19 cases on a country level. It is useful for getting an up-to-date overview of the current situation in each country.
+### JSON Files:
 
-- day_wise.csv: This dataset offers a daily summary of the number of COVID-19 cases. However, it does not provide country-level data. This global overview can provide insights into the overall trends and pace of the pandemic.
+These files map the category IDs to their corresponding categories for videos from different countries, assisting in understanding popular content categories in respective regions.
 
-- usa_county_wise.csv: This dataset provides a granular look at the day-to-day number of COVID-19 cases at the county level within the United States. This allows for a detailed understanding of how the pandemic is affecting different regions within the US.
+- DE_category_id.json: Category data for Germany
+- FR_category_id.json: Category data for France
+- GB_category_id.json: Category data for the United Kingdom
+- IN_category_id.json: Category data for India
+- JP_category_id.json: Category data for Japan
+- KR_category_id.json: Category data for South Korea
+- MX_category_id.json: Category data for Mexico
+- RU_category_id.json: Category data for Russia
+- US_category_id.json: Category data for the United States
 
-- worldometer_data.csv: The final dataset is sourced from Worldometer, a reputable reference website that provides real-time statistics for a wide variety of topics. This dataset provides the most recent data on the number of COVID-19 cases and can offer valuable insights into the current state of the pandemic.
+These data was collected from kaggle : https://www.kaggle.com/datasets/datasnaek/youtube-new
 
-These data was collected from kaggle : https://www.kaggle.com/datasets/imdevskp/corona-virus-report
+## 6. AWS Set up:
+In this first section, we gonna create the account and connect the AWS CLI to our local computer
+
+### 6.1 Sign up the account:
+1. Sign up to the AWS using root account (use your email)
+2. Go to the AWS IAM and create the new user there, this user will be used as our main system since the root account it's a bit risk to be used (since it contains all the important information)
+3. After you create the user, download the csv file and logout from the account.
+4. Log in again using your user account (the register information is included in your csv file)
+
+### 6.2 Connect the AWS CLI:
+1. It would be different for different OS, please check and open AWS CLI for more information.
+2. Open your terminal/ Git Bash
+3. Running the ( aws configure )
+4. Add all your personal information from your account
+- AWS Access Key ID
+- AWS Secret Access Key
+- Default region name: The region code of the default region (e.g., us-east-1).
+- Default output format: The output format for the AWS CLI (e.g., json).
+
+
+
+
 
