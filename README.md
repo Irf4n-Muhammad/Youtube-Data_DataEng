@@ -98,6 +98,18 @@ In this first section, we gonna create the account and connect the AWS CLI to ou
 - Default output format: The output format for the AWS CLI (e.g., json).
 
 
+## 7. AWS S3 (Raw File Bucket)
+This tools will provide the bucket which will be used to store our file
+1. Create the main table for our raw file
+2. You can use the name of the combination of your project and the region that you use
+
+Along the process we will back to create the new bucket, so keep in mind to always specify the name of your bucket.
+For example (your main bucket name)-(your specific task using this bucket)
+
+## 8. 
+
+
+
 
 
 
