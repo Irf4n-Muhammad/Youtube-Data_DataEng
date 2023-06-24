@@ -40,7 +40,6 @@ In this project, we gonna leverage some AWS services:
  - AWS Glue
  - AWS lambda
  - AWS athena
- - AWS Redshift
 
 ## 4. Data Architecture:
 <img src="https://github.com/Irf4n-Muhammad/Youtube-Data_DataEng/assets/121205860/a08ba9c3-f337-4147-b995-24544332a5b5" width="700" height="400">
