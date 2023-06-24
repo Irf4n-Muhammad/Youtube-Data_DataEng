@@ -1,5 +1,7 @@
 # Data Engineering Project / Youtube Data Analysis
 
+# (THE PROJECT IS STILL IN PROGRESS, WILL BE UPDATED SOON)
+
 ## List of Contents:
 1. [Description of the Problem](#1-description-of-the-problem)
 2. [Objective](#2-objective)
