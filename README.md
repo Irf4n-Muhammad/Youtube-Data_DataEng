@@ -1,10 +1,17 @@
 # Data Engineering Project / Youtube Data Analysis
 
 ## List of Contents:
-[1. Description of the Problem](#1-description-of-the-problem)
+1. [Description of the Problem](#1-description-of-the-problem)
+2. [Objective](#2-objective)
+3. [Technologies](#3-technologies)
+4. [Data Architecture](#4-data-architecture)
+5. [Data Description](#5-data-description)  
+   1. [CSV Files](#51-csv-files)  
+   2. [JSON Files](#52-json-files)
+6. [AWS Set up](#6-aws-set-up)  
+   1. [Sign up the account](#61-sign-up-the-account)  
+   2. [Connect the AWS CLI](#62-connect-the-aws-cli)
 
-[2. Objective](#2-objective)
-[](#)
 [](#)
 [](#)
 [](#)
@@ -40,7 +47,7 @@ In this project, we gonna leverage some AWS services:
 
 ## 5. Data Description:
 
-### CSV Files:
+### 5.1 CSV Files:
 
 These files contain historical video data from YouTube for different countries. They include video IDs, viewing durations, user interests, popular content, and more. The data helps understand viewer behavior and video performance trends in respective regions.
 
@@ -55,7 +62,7 @@ These files contain historical video data from YouTube for different countries. 
 - RUvideos.csv: Data for Russia
 - USvideos.csv: Data for the United States
 
-### JSON Files:
+### 5.2 JSON Files:
 
 These files map the category IDs to their corresponding categories for videos from different countries, assisting in understanding popular content categories in respective regions.
 
