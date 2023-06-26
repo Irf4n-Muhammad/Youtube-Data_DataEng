@@ -109,18 +109,21 @@ For example (your main bucket name)-(your specific task using this bucket)
 5. Send the folder into S3 Bucket using git bash
 
 ## 8. AWS Glue:
-This tools can help to read the schema and create the catalog, which eventually can be created a table and we can use the AWS Athena afterwards.
+This tools can help to read the schema and create the catalog (ETL Process), which eventually can be created a table and we can use the AWS Athena afterwards.
 1. Create the crawler glue
 2. Then we create the role for the crawler (specify glue name in your glue role)
 3. Set the role:
    - AmazonFullAccess
    - AWSGlueServiceRole
-4.Create the new database for AWS Glue
+     
+4. Create the new database for AWS Glue
 5. Open the table and we would find some information about json (column name, etc)
 6. Click action and click the view data
 7. And it will open AWS Athena
 
 ## 9. AWS Athena:
+We can transform the data without moving it data warehouse like reshifts or in other words, we transform on top of the data and can be stored again it in the S3 bucket.
+
 1. Click setting and manage
 2. Create the new bucket, in particular for AWS Athena
 3. Try to run, we will find there is error
